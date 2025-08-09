@@ -233,4 +233,8 @@ footer {
     .feature-row:nth-child(2) {
         flex-direction: column-reverse;
     }
+
+    #hero .hero-text h2 {
+        font-size: 1.8em; /* スマホでのフォントサイズを調整 */
+    }
 }
