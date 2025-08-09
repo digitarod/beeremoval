@@ -121,9 +121,13 @@ section {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba(0,0,0,0.6);
     padding: 20px;
     border-radius: 8px;
+}
+
+.hero-text h2,
+.hero-text p {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 /* こだわりセクション */
