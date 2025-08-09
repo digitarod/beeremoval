@@ -1,0 +1,236 @@
+/* 基本スタイル */
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    color: #333;
+}
+
+header {
+    background: #ffc107;
+    color: #333;
+    padding: 1rem 5%; /* 左右に余白を追加 */
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 90%; /* widthを調整 */
+    display: flex; /* Flexboxを適用 */
+    justify-content: space-between; /* 両端揃え */
+    align-items: center; /* 中央揃え（垂直方向） */
+}
+
+header h1 {
+    margin: 0;
+}
+
+header nav ul {
+    padding: 0;
+    list-style: none;
+}
+
+header nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+main {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+section h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    padding-bottom: 10px;
+    border-bottom: 3px solid #ffc107;
+    display: inline-block; /* 中央揃えのために必要 */
+    position: relative; /* 中央揃えのために必要 */
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+section {
+    background: #fff;
+    margin: 20px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* ヒーローセクション */
+#hero {
+    position: relative;
+    color: #fff;
+    text-align: center;
+    padding: 0;
+}
+
+.carousel {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+.carousel-item img {
+    width: 100%;
+    display: block;
+    height: 500px; /* 高さを固定 */
+    object-fit: cover; /* アスペクト比を維持したままトリミング */
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+/* こだわりセクション */
+.feature-row {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.feature-text {
+    flex: 1.5; /* テキストの割合を増やす */
+}
+
+.feature-image {
+    flex: 1; /* 画像の割合を減らす */
+}
+
+.feature-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.feature-text h3 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* FAQセクション */
+.faq-item {
+    margin-bottom: 10px;
+}
+
+.faq-item h3 {
+    margin: 0;
+    padding: 10px;
+    background: #ffc107;
+    cursor: pointer;
+}
+
+/* お問合せフォーム */
+#contact p {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#contact form {
+    display: flex;
+    flex-direction: column;
+    max-width: 700px; /* 最大幅を設定 */
+    margin: 0 auto; /* 中央揃え */
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button[type="submit"] {
+    background: #ffc107;
+    color: #333;
+    border: 0;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* フッター */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #333;
+    color: #fff;
+}
+
+/* レスポンシブ対応 */
+@media(max-width: 768px) {
+    main { 
+        width: 95%; 
+        padding: 0 10px;
+    }
+    header {
+        flex-direction: column;
+        padding: 1rem;
+        width: calc(100% - 2rem);
+    }
+    .feature-row {
+        flex-direction: column;
+    }
+    /* スマホ表示では2行目の画像の順番を元に戻す */
+    .feature-row:nth-child(2) {
+        flex-direction: column-reverse;
+    }
+}
